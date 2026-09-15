@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
-  "name": "source-watch",
+  "name": "post-quantum-watch",
   "main": "service/src/index.js",
   "compatibility_date": "2026-09-09",
   "build": { "command": "hugo --source site --minify" },
@@ -23,7 +23,7 @@
     ]
   },
   "d1_databases": [
-    { "binding": "DB", "database_name": "source-watch", "database_id": "00000000-0000-0000-0000-000000000000" }
+    { "binding": "DB", "database_name": "post-quantum-watch", "database_id": "d114ec1a-8408-4803-8d98-49ca9d948e53" }
   ],
   "ratelimits": [
     {
@@ -32,9 +32,9 @@
       "simple": { "limit": 10, "period": 60 }
     }
   ],
-  "triggers": { "crons": [] },
+  "triggers": { "crons": ["37 3 * * *"] },
   "vars": {
-    "GITHUB_DISPATCH_REPO": "",
+    "GITHUB_DISPATCH_REPO": "macgyver13/post-quantum-watch",
     "GITHUB_DISPATCH_WORKFLOW": "refresh-feed.yml",
     "GITHUB_DISPATCH_REF": "main"
   }

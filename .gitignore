@@ -9,4 +9,5 @@ __pycache__/
 node_modules/
 .dev.vars
 wrangler.dev.jsonc
+.prod.vars
 
